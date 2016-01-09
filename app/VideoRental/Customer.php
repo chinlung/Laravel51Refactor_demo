@@ -6,6 +6,7 @@ namespace VideoRental;
 
 class Customer
 {
+    protected $orders = [];
 
     /**
      * Customer constructor.
@@ -21,8 +22,7 @@ class Customer
      */
     public function addOrder(Order $order)
     {
-        $orders = [];
-        $orders[] = $order;
+        $this->orders[] = $order;
     }
 
     /**
