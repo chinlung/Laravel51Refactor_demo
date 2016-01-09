@@ -14,11 +14,20 @@ class Customer
     {
     }
 
-    public function addOrder($order)
+    /**
+     * 新增訂單
+     *
+     * @param Order $order
+     */
+    public function addOrder(Order $order)
     {
+        $orders = [];
+        $orders[] = $order;
     }
 
     /**
+     * 計算一位顧客所有訂單金額
+     *
      * @return int
      */
     public function calculateTotalPrice() : int
