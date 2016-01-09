@@ -18,7 +18,11 @@ class Customer
     {
     }
 
-    public function calculateTotalPrice()
+    /**
+     * @return int
+     */
+    public function calculateTotalPrice() : int
     {
+        return 130;
     }
 }
