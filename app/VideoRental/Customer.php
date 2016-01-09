@@ -13,4 +13,8 @@ class Customer
     public function __construct()
     {
     }
+
+    public function addOrder($order)
+    {
+    }
 }
