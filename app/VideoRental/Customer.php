@@ -17,4 +17,8 @@ class Customer
     public function addOrder($order)
     {
     }
+
+    public function calculateTotalPrice()
+    {
+    }
 }
