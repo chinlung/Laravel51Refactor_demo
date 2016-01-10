@@ -46,6 +46,10 @@ class Customer
                 $price += 150;
                 $price += ($order->getDays() - 3) * 30;
             }
+            elseif ($order->getMovie()->getType() === 'Children') {
+                $price += 40;
+                $price += ($order->getDays() - 7) * 10;
+            }
 
             $totalPrice += $price;
         }
