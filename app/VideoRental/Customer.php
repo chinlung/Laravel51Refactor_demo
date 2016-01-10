@@ -32,6 +32,19 @@ class Customer
      */
     public function calculateTotalPrice() : int
     {
-        return 130;
+        $totalPrice = 0;
+
+        foreach ($this->orders as $order) {
+            $price = 0;
+
+            if ($order->getMovie()->getType() === 'Regular') {
+                $price += 100;
+                $price += ($order->getDays() - 7) * 10;
+            }
+
+            $totalPrice += $price;
+        }
+
+        return $totalPrice;
     }
 }
