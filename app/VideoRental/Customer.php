@@ -35,9 +35,7 @@ class Customer
         $totalPrice = 0;
 
         foreach ($this->orders as $order) {
-            $price = $this->calculatePrice($order);
-
-            $totalPrice += $price;
+            $totalPrice += $this->calculatePrice($order);
         }
 
         return $totalPrice;
