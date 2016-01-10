@@ -42,7 +42,10 @@ class Customer
                 $price += 100;
                 $price += ($order->getDays() - 7) * 10;
             }
-
+            elseif ($order->getMovie()->getType() === 'NewRelease') {
+                $price += 150;
+                $price += ($order->getDays() - 3) * 30;
+            }
 
             $totalPrice += $price;
         }
