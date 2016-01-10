@@ -38,17 +38,19 @@ class Customer
             $price = 0;
 
             /** @var Order $order */
-            if ($order->getMovie()->getType() === 'Regular') {
-                $price += 100;
-                $price += ($order->getDays() - 7) * 10;
-            }
-            elseif ($order->getMovie()->getType() === 'NewRelease') {
-                $price += 150;
-                $price += ($order->getDays() - 3) * 30;
-            }
-            elseif ($order->getMovie()->getType() === 'Children') {
-                $price += 40;
-                $price += ($order->getDays() - 7) * 10;
+            switch($order->getMovie()->getType()) {
+                case 'Regular':
+                    $price += 100;
+                    $price += ($order->getDays() - 7) * 10;
+                    break;
+                case 'NewRelease':
+                    $price += 150;
+                    $price += ($order->getDays() - 3) * 30;
+                    break;
+                case 'Children':
+                    $price += 40;
+                    $price += ($order->getDays() - 7) * 10;
+                    break;
             }
 
             $totalPrice += $price;
