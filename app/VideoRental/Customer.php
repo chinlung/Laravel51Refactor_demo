@@ -37,6 +37,7 @@ class Customer
         foreach ($this->orders as $order) {
             $price = 0;
 
+            /** @var Order $order */
             if ($order->getMovie()->getType() === 'Regular') {
                 $price += 100;
                 $price += ($order->getDays() - 7) * 10;
