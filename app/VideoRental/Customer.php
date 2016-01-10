@@ -43,6 +43,7 @@ class Customer
                 $price += ($order->getDays() - 7) * 10;
             }
 
+
             $totalPrice += $price;
         }
 

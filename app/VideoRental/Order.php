@@ -31,4 +31,14 @@ class Order
     {
         return $this->movie;
     }
+
+    /**
+     * 回傳租片天數
+     *
+     * @return int
+     */
+    public function getDays() : int
+    {
+        return $this->days;
+    }
 }
