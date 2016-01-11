@@ -14,19 +14,7 @@ class Movie
      */
     public function setType(string $type)
     {
-        switch ($type) {
-            case 'Regular':
-                $this->type = new RegularMovieType();
-                break;
-
-            case 'NewRelease':
-                $this->type = new NewReleaseMovieType();
-                break;
-
-            case 'Children':
-                $this->type =  new ChildrenMovieType();
-                break;
-        }
+        $this->type = MovieTypeFactory::create($type);
     }
 
     /**
