@@ -38,9 +38,7 @@ class Movie
 
         switch ($this->getType()) {
             case 'Regular':
-                $price += 100;
-                $price += ($days - 7) * 10;
-                return $price;
+
             case 'NewRelease':
                 $price += 150;
                 $price += ($days - 3) * 30;
