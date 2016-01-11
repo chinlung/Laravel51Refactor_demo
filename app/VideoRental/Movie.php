@@ -40,9 +40,7 @@ class Movie
             case 'Regular':
 
             case 'NewRelease':
-                $price += 150;
-                $price += ($days - 3) * 30;
-                return $price;
+
             case 'Children':
                 $price += 40;
                 $price += ($days - 7) * 10;
