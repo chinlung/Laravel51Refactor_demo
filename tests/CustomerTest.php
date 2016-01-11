@@ -71,4 +71,25 @@ class CustomerTest extends TestCase
         /** assert */
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @group Sam
+     * @group CustomerTest
+     */
+    public function test_order_1_taiwan_movie_with_12_days()
+    {
+        /** arrange */
+        $movie = new Movie('Taiwan');
+        $order = new Order($movie, 12);
+        $target = new Customer();
+        $target->addOrder($order);
+
+        $expected = 100;
+
+        /** act */
+        $actual = $target->calculateTotalPrice();
+
+        /** assert */
+        $this->assertEquals($expected, $actual);
+    }
 }
