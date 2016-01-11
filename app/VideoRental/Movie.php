@@ -10,12 +10,20 @@ class Movie
     private $type;
 
     /**
+     * @param string $type
+     */
+    public function setType(string $type)
+    {
+        $this->type = $type;
+    }
+
+    /**
      * Movie constructor.
      * @param string $type
      */
     public function __construct(string $type)
     {
-        $this->type = $type;
+        $this->setType($type);
     }
 
     /**
