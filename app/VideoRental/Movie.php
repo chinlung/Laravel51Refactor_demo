@@ -42,9 +42,7 @@ class Movie
             case 'NewRelease':
 
             case 'Children':
-                $price += 40;
-                $price += ($days - 7) * 10;
-                return $price;
+
         }
         return $price;
     }
