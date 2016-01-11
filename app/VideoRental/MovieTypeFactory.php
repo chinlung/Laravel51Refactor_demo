@@ -4,6 +4,8 @@
 namespace VideoRental;
 
 
+use Illuminate\Support\Facades\App;
+
 class MovieTypeFactory
 {
     /**
@@ -12,15 +14,7 @@ class MovieTypeFactory
      */
     public static function create(string $type) : AbstractMovieType
     {
-        switch ($type) {
-            case 'Regular':
-                return new RegularMovieType();
-
-            case 'NewRelease':
-                return new NewReleaseMovieType();
-
-            case 'Children':
-                return new ChildrenMovieType();
-        }
+        App::bind(AbstractMovieType::class, 'VideoRental\\' . $type . 'MovieType');
+        return App::make(AbstractMovieType::class);
     }
 }
