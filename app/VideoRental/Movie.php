@@ -6,7 +6,7 @@ namespace VideoRental;
 
 class Movie
 {
-    /** @var string */
+    /** @var AbstractMovieType */
     private $type;
 
     /**
@@ -14,7 +14,19 @@ class Movie
      */
     public function setType(string $type)
     {
-        $this->type = $type;
+        switch ($type) {
+            case 'Regular':
+                $this->type = new RegularMovieType();
+                break;
+
+            case 'NewRelease':
+                $this->type = new NewReleaseMovieType();
+                break;
+
+            case 'Children':
+                $this->type =  new ChildrenMovieType();
+                break;
+        }
     }
 
     /**
@@ -34,25 +46,15 @@ class Movie
      */
     public function calculatePrice(int $days)
     {
-        $price = 0;
-
-        switch ($this->getType()) {
-            case 'Regular':
-
-            case 'NewRelease':
-
-            case 'Children':
-
-        }
-        return $price;
+        return $this->getType()->calculatePrice($days);
     }
 
     /**
-     * 回傳Movie type字串
+     * 回傳AbstractMovieType物件
      *
-     * @return string
+     * @return AbstractMovieType
      */
-    public function getType() : string
+    public function getType() : AbstractMovieType
     {
         return $this->type;
     }
